@@ -1,4 +1,9 @@
-FROM openjdk:17
-EXPOSE 8080
-ADD target/pipeline-testimage-githubactions.jar pipeline-testimage-githubactions.jar
-ENTRYPOINT ["java","-jar","target/pipeline-testimage-githubactions"]
+FROM openjdk:17-jre-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the JAR file from your host into the container
+COPY pipeline-testimage-githubactions.jar /app/
+
+ENTRYPOINT ["java","-jar","pipeline-testimage-githubactions.jar"]
