@@ -1,4 +1,4 @@
 FROM openjdk:17
 EXPOSE 8080
 ADD target/pipeline-testimage-githubactions.jar pipeline-testimage-githubactions.jar
-ENTRYPOINT "java","-jar","pipeline-testimage-githubactions"
+ENTRYPOINT ["java", "-jar", "pipeline-testimage-githubactions.jar"]
